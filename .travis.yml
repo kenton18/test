@@ -23,7 +23,7 @@ before_script:
     # - "sudo service mongod start"
 
     - "docker run -d --name mongo mongo"
-    - "docker build -t bdbai/nthskeys-node ."
+    - "docker build -t kenton18/test ."
     - "docker run -d --link mongo --name nk bdbai/nthskeys-node"
 script:
     - "docker ps -f 'name=nk' | grep Up"
