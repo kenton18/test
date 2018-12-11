@@ -14,8 +14,5 @@ describe('Read a Record', function() {
     it("find testing", async function(){ 
         const o = await findData();
         expect(o).to.not.be.null;
-        setTimeout((function() {  
-            return process.kill(process.pid);
-        }), 5000);
     });
 });
