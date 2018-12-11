@@ -6,9 +6,11 @@ describe('Save records to DB', function() {
     
     it('Testing the fomate Data programme',  function(){
         FirstCase =  convert_existing_date("Saturday 12 01 2018");
+        Console.log("1")
         SecondCase =  convert_existing_date("Sunday 12 10 2018");
+        Console.log("2")
         ThirdCase =  convert_existing_date("Sunday 12 31 2018");
-
+        Console.log("3")
         expect(FirstCase[1]).to.equal('12');
         expect(FirstCase[2]).to.equal('01');
         expect(FirstCase[3]).to.equal('2018');
