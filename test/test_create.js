@@ -10,9 +10,6 @@ describe('Save records to DB', function() {
         const o = await createDate("10","TestingCreate","1997-11-01", "19971-11-01", "1997-11-01", "Meat" );
         
         expect(o).to.equal('create success');
-        setTimeout((function() {  
-            return process.kill(process.pid);
-        }), 5000);
 })}
 );
 
