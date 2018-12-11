@@ -15,7 +15,6 @@ before_script:
   - docker ps -a
 
 script:
-  - npm run lint
   - MONGODB_URL=mongodb://localhost/connect-mongo-test npm test
 
 after_success:
