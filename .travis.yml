@@ -15,6 +15,8 @@ before_script:
   - docker ps -a
 
 script:
+  - npm install mocha
+  - npm install chai
   - MONGODB_URL=mongodb://localhost/connect-mongo-test npm test
 
 after_success:
