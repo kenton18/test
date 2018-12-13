@@ -16,11 +16,10 @@ script:
   - npm install mocha
   - npm install chai
   - MONGODB_URL=mongodb://localhost/connect-mongo-test mocha --exit
-
 after_success:
   - bash <(curl -s https://codecov.io/bash)	
- 
-  
+
  branches:
   only: 
     - master
+
