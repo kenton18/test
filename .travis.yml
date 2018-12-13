@@ -18,4 +18,6 @@ script:
   - MONGODB_URL=mongodb://localhost/connect-mongo-test mocha --exit
 
 after_success:
-  - npm install coveralls && npm run cover | coveralls
+  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
+  - "chmod a+x /tmp/travis-automerge"
+  - "BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=kenton18/test /tmp/travis-automerge"
