@@ -18,4 +18,7 @@ script:
   - MONGODB_URL=mongodb://localhost/connect-mongo-test mocha --exit
 
 after_success:
-  - ./travis_merge_script.sh
+  - bash <(curl -s https://codecov.io/bash)	  - bash <(curl -s https://codecov.io/bash)
+ branches:
+  only: 
+    - master
