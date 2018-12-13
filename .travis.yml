@@ -18,7 +18,6 @@ install:
   - npm install -g codecov
 script:
   - MONGODB_URL=mongodb://localhost/connect-mongo-test mocha --exit
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
   - codecov
  
 after_success:
