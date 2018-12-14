@@ -12,14 +12,13 @@ before_script:
   - docker run -d -p 27017:27017 mongo:3
   - docker ps -a
 
-script:
+install:
   - npm install mocha
   - npm install chai
+  - npm install -g codecov
+script:
   - MONGODB_URL=mongodb://localhost/connect-mongo-test mocha --exit
-
+  - codecov
+ 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  
- branches:
-  only: 
-    - master
