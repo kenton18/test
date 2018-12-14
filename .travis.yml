@@ -21,4 +21,4 @@ script:
   - codecov
  
 after_success:
-  - bash <(curl -s https://codecov.io/bash) CODECOV_TOKEN=d2d8a625-5203-4846-b6a4-5adcb2379bb9
+  - bash <(curl -s https://codecov.io/bash) -t uuid-repo-token
