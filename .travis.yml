@@ -15,10 +15,12 @@ before_script:
 install:
   - npm install mocha
   - npm install chai
-  - npm install -g codecov
+  - npm install codecov --save-dev
 script:
   - MONGODB_URL=mongodb://localhost/connect-mongo-test mocha --exit
-  - codecov
+  - export CODECOV_TOKEN=":d2d8a625-5203-4846-b6a4-5adcb2379bb9"
+  - istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec
+  - ./node_modules/.bin/codecov
  
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t uuid-repo-token
