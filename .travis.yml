@@ -15,11 +15,7 @@ before_script:
 script:
   - npm install mocha
   - npm install chai
-  - npm install -g codecov
   - MONGODB_URL=mongodb://localhost/connect-mongo-test mocha --exit
-  - istanbul cover {your_npm_path}\npm\node_modules\mocha\bin\_mocha
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
-  - codecov
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
