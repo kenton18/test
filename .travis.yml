@@ -18,6 +18,7 @@ script:
   - MONGODB_URL=mongodb://localhost/connect-mongo-test mocha --exit
 
 after_success:
+  - istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --require babel-register -R spec
   - bash <(curl -s https://codecov.io/bash)	
  
   
