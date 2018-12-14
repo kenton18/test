@@ -15,6 +15,7 @@ before_script:
 install:
   - npm install mocha
   - npm install chai
+  - npm install istanbul
   - npm install codecov --save-dev
 script:
   - MONGODB_URL=mongodb://localhost/connect-mongo-test mocha --exit
