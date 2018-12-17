@@ -24,6 +24,7 @@ script:
 
 after_success:
   - dir
+  - dir
   - git init
   - git config user.name "kenton18"
   - git config user.email "wilsom20012@gmail.com"
@@ -33,4 +34,4 @@ after_success:
   - git push --force --quiet "https://${GH_TOKEN}@github.com/kenton18/test" master:master
 branches:
   only: 
-    - master
+    - master 
