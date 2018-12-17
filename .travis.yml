@@ -23,15 +23,14 @@ script:
 
 
 after_success:
-  - dir
-  - dir
+  - cd ./public
   - git init
   - git config user.name "kenton18"
   - git config user.email "wilsom20012@gmail.com"
   - git add .
   - git commit -m "auto depoly"
   - git config --global --unset https.proxy
-  - git push --force --quiet "https://${GH_TOKEN}@github.com/kenton18/test" master:master
+  - git push --force --quiet "https://${GH_TOKEN}@https://github.com/kenton18/test" master:master
 branches:
   only: 
-    - master 
+    - master
