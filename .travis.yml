@@ -26,10 +26,11 @@ after_success:
   - git init
   - git config user.name "kenton18"
   - git config user.email "wilsom20012@gmail.com"
-  - git add -A
-  - git commit -m "auto depoly"
-  - git config --global --unset https.proxy
-  - git push --force --quiet "https://${GH_TOKEN}@github.com/kenton18/test" master:master
+  - git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* || exit
+  - git fetch --all || exit
+  - git checkout master || exit
+  - git merge --no-ff "$TRAVIS_COMMIT" || exit
+  - git push @github.com/">https://${GH_TOKEN}@github.com/kenton18/test 
 branches:
   only: 
     - master
