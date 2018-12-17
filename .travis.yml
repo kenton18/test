@@ -29,7 +29,7 @@ after_success:
   - git add .
   - git commit -m "auto depoly"
   - git config --global --unset https.proxy
-  - git push --force --quiet "https://${GH_TOKEN}@https://github.com/kenton18/test" master:master
+  - git push --force --quiet "https://${GH_TOKEN}@github.com/kenton18/test" master:master
 branches:
   only: 
     - master
