@@ -23,6 +23,7 @@ script:
 
 
 after_success:
+  - dir
   - git init
   - git config user.name "kenton18"
   - git config user.email "wilsom20012@gmail.com"
